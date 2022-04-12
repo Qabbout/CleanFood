@@ -25,7 +25,7 @@ class CarouselMainCollectionViewCell: UICollectionViewCell, UICollectionViewDele
 
         collectionView.dataSource = self
         collectionView.delegate = self
-        whiteBG.layer.cornerRadius = 40
+        whiteBG.layer.cornerRadius = 35
 
     }
     override func layoutSubviews() {
