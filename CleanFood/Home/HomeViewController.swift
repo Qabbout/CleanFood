@@ -21,7 +21,29 @@ class HomeViewController: UICollectionViewController, HomeDisplayLogic {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
 
+    private let floatingActionButton: UIButton = {
+        let button = UIButton()
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 30
+        button.backgroundColor = .white
+        button.setImage(UIImage(systemName: "cart.fill"), for: .normal)
+        button.tintColor = .black
+        button.layer.shadowRadius = 2
+        button.layer.shadowOpacity = 0.8
+        button.layer.shadowOffset = .init(width: -3, height: 3)
 
+
+        return button
+    }()
+
+    @objc func printit(){
+        print("Workeeeeeeeeeeeeeeeeeeeeeeeeee")
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        floatingActionButton.frame = .init(x: view.frame.width - 60 - 20, y: view.frame.height - 100, width: 60, height: 60)
+    }
 
 
 
@@ -67,6 +89,8 @@ class HomeViewController: UICollectionViewController, HomeDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(floatingActionButton)
+        floatingActionButton.addTarget(self, action: #selector(printit), for: .touchUpInside)
         collectionView.contentInsetAdjustmentBehavior = .never
         doSomething()
 //        doSomethingElse()
