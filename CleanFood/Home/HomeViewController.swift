@@ -67,8 +67,7 @@ class HomeViewController: UICollectionViewController, HomeDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.collectionView.register(CarouselMainCollectionViewCell.self, forCellWithReuseIdentifier: "carouselMainCell")
-//        self.collectionView.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: "menuCell")
+        collectionView.contentInsetAdjustmentBehavior = .never
         doSomething()
 //        doSomethingElse()
     }

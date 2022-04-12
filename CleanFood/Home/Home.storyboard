@@ -11,7 +11,7 @@
         <!--Home View Controller-->
         <scene sceneID="vX7-iO-n06">
             <objects>
-                <collectionViewController id="ikZ-5M-R5t" customClass="HomeViewController" customModule="CleanFood" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController extendedLayoutIncludesOpaqueBars="YES" id="ikZ-5M-R5t" customClass="HomeViewController" customModule="CleanFood" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="2z8-AK-rFl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,7 +103,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pizza" width="168" height="300"/>
+        <image name="pizza" width="1333" height="2000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
