@@ -16,6 +16,7 @@ class CarouselMainCollectionViewCell: UICollectionViewCell, UICollectionViewDele
     var currentPage = 1 {
         didSet {
             pageControl.currentPage = currentPage
+
         }
     }
 
