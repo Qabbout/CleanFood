@@ -22,6 +22,8 @@
 		F7DBCDDC280416490081B21A /* CarouselMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBCDDB280416490081B21A /* CarouselMainCollectionViewCell.swift */; };
 		F7DBCDDE28041DCF0081B21A /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBCDDD28041DCF0081B21A /* MenuCollectionViewCell.swift */; };
 		F7DBCDEF2804493B0081B21A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7DBCDEE2804493B0081B21A /* Home.storyboard */; };
+		F7E386ED280575FC001BC542 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E386EC280575FC001BC542 /* CategoriesCollectionViewCell.swift */; };
+		F7E386EF28057706001BC542 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E386EE28057706001BC542 /* CategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		F7DBCDDB280416490081B21A /* CarouselMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselMainCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7DBCDDD28041DCF0081B21A /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7DBCDEE2804493B0081B21A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		F7E386EC280575FC001BC542 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7E386EE28057706001BC542 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				F7DBCDD9280414D20081B21A /* CarouselCollectionViewCell.swift */,
 				F7DBCDDB280416490081B21A /* CarouselMainCollectionViewCell.swift */,
 				F7DBCDDD28041DCF0081B21A /* MenuCollectionViewCell.swift */,
+				F7E386EC280575FC001BC542 /* CategoriesCollectionViewCell.swift */,
+				F7E386EE28057706001BC542 /* CategoryCollectionViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -188,6 +194,8 @@
 				F7DBCDB8280403E50081B21A /* SceneDelegate.swift in Sources */,
 				F7DBCDDA280414D20081B21A /* CarouselCollectionViewCell.swift in Sources */,
 				F7DBCDD02804052D0081B21A /* HomeWorker.swift in Sources */,
+				F7E386EF28057706001BC542 /* CategoryCollectionViewCell.swift in Sources */,
+				F7E386ED280575FC001BC542 /* CategoriesCollectionViewCell.swift in Sources */,
 				F7DBCDD42804052D0081B21A /* HomeInteractor.swift in Sources */,
 				F7DBCDDE28041DCF0081B21A /* MenuCollectionViewCell.swift in Sources */,
 				F7DBCDCF2804052D0081B21A /* HomePresenter.swift in Sources */,
