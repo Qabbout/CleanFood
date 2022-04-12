@@ -118,140 +118,172 @@
                                     <outlet property="whiteBG" destination="Gwh-hu-5rH" id="b8b-CJ-z3R"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="categories" id="CpZ-XU-MxQ" customClass="CategoriesCollectionViewCell" customModule="CleanFood" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="627" width="414" height="128"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8nt-PT-dGx">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x2G-FG-cR1">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="0.0" id="6V6-kM-7M1">
-                                                <size key="itemSize" width="120" height="70"/>
-                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                <inset key="sectionInset" minX="10" minY="0.0" maxX="30" maxY="0.0"/>
-                                            </collectionViewFlowLayout>
-                                            <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="category" id="M8S-q9-W68" customClass="CategoryCollectionViewCell" customModule="CleanFood" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="29" width="120" height="70"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="pc4-5a-jyz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JF-Ky-Ctq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
-                                                                <color key="tintColor" systemColor="secondaryLabelColor"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Pizza" titleAlignment="automatic">
-                                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="40"/>
-                                                                </buttonConfiguration>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="9JF-Ky-Ctq" secondAttribute="trailing" id="0lI-pV-JDn"/>
-                                                            <constraint firstAttribute="bottom" secondItem="9JF-Ky-Ctq" secondAttribute="bottom" id="bFz-s5-eoa"/>
-                                                            <constraint firstItem="9JF-Ky-Ctq" firstAttribute="top" secondItem="pc4-5a-jyz" secondAttribute="top" id="edg-HO-hUD"/>
-                                                            <constraint firstItem="9JF-Ky-Ctq" firstAttribute="leading" secondItem="pc4-5a-jyz" secondAttribute="leading" id="hr4-uZ-rkF"/>
-                                                        </constraints>
-                                                    </collectionViewCellContentView>
-                                                    <connections>
-                                                        <outlet property="categoryButton" destination="9JF-Ky-Ctq" id="OWy-gp-GdK"/>
-                                                    </connections>
-                                                </collectionViewCell>
-                                            </cells>
-                                        </collectionView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="x2G-FG-cR1" firstAttribute="top" secondItem="8nt-PT-dGx" secondAttribute="top" id="DDC-8a-Dpy"/>
-                                        <constraint firstAttribute="trailing" secondItem="x2G-FG-cR1" secondAttribute="trailing" id="g1E-bw-tBD"/>
-                                        <constraint firstItem="x2G-FG-cR1" firstAttribute="leading" secondItem="8nt-PT-dGx" secondAttribute="leading" id="qkN-F7-Bwb"/>
-                                        <constraint firstAttribute="bottom" secondItem="x2G-FG-cR1" secondAttribute="bottom" id="s8g-CI-zS4"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <size key="customSize" width="414" height="128"/>
-                                <connections>
-                                    <outlet property="collectionView" destination="x2G-FG-cR1" id="SNO-P6-I2u"/>
-                                </connections>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="filters" id="0wm-yS-9kG" userLabel="filters" customClass="FiltersCollectionViewCell" customModule="CleanFood" customModuleProvider="target">
-                                <rect key="frame" x="9" y="765" width="396" height="128"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1r7-zG-emv">
-                                    <rect key="frame" x="0.0" y="0.0" width="396" height="128"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alignment="center" spacing="25" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j5x-ia-yw2">
-                                            <rect key="frame" x="20" y="0.0" width="376" height="50"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR6-5f-19T">
-                                                    <rect key="frame" x="0.0" y="11.5" width="45" height="27.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lf8-hh-Qsw">
-                                                    <rect key="frame" x="70" y="9.5" width="60" height="31"/>
-                                                    <color key="tintColor" systemColor="secondaryLabelColor"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Spicy"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3i-d1-rwN">
-                                                    <rect key="frame" x="155" y="9.5" width="64.5" height="31"/>
-                                                    <color key="tintColor" systemColor="secondaryLabelColor"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Vegan"/>
-                                                </button>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-X0-JAT" userLabel="space">
-                                                    <rect key="frame" x="244.5" y="0.0" width="131.5" height="50"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="lf8-hh-Qsw" firstAttribute="width" secondItem="z3i-d1-rwN" secondAttribute="width" multiplier="0.930233" id="9bx-AO-72k"/>
-                                                <constraint firstAttribute="height" constant="50" id="Mp4-Ma-7vT"/>
-                                            </constraints>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="j5x-ia-yw2" firstAttribute="top" secondItem="1r7-zG-emv" secondAttribute="top" id="6y0-Ep-fZ9"/>
-                                        <constraint firstAttribute="trailing" secondItem="j5x-ia-yw2" secondAttribute="trailing" id="B1T-Nx-xHP"/>
-                                        <constraint firstItem="j5x-ia-yw2" firstAttribute="leading" secondItem="1r7-zG-emv" secondAttribute="leading" constant="20" id="DNE-RX-nEQ"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <size key="customSize" width="396" height="128"/>
-                                <connections>
-                                    <outlet property="filtersLabel" destination="eR6-5f-19T" id="792-FU-ATl"/>
-                                    <outlet property="spicyFilterButton" destination="lf8-hh-Qsw" id="LLV-6r-ndb"/>
-                                    <outlet property="veganFilterButton" destination="z3i-d1-rwN" id="qNa-hR-gYU"/>
-                                </connections>
-                            </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="menuCell" id="DJm-Fe-CKV" userLabel="menuCell" customClass="MenuCollectionViewCell" customModule="CleanFood" customModuleProvider="target">
-                                <rect key="frame" x="2" y="903" width="410" height="299"/>
+                                <rect key="frame" x="2" y="627" width="410" height="299"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="V8k-OW-NQC">
                                     <rect key="frame" x="0.0" y="0.0" width="410" height="299"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gdk-Ae-z9v">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gdk-Ae-z9v">
                                             <rect key="frame" x="0.0" y="0.0" width="410" height="299"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="axd-GY-DUt">
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="axd-GY-DUt">
                                                 <size key="itemSize" width="415" height="128"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="categories" id="CpZ-XU-MxQ" customClass="CategoriesCollectionViewCell" customModule="CleanFood" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="410" height="75"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n6Z-FR-E5M">
+                                                        <rect key="frame" x="0.0" y="0.0" width="410" height="75"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="always" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x2G-FG-cR1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="410" height="75"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="75" id="gRP-0b-EnD"/>
+                                                                </constraints>
+                                                                <viewLayoutGuide key="contentLayoutGuide" id="hcf-uc-Ipl"/>
+                                                                <viewLayoutGuide key="frameLayoutGuide" id="Qcf-8L-Mtd"/>
+                                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="0.0" id="6V6-kM-7M1">
+                                                                    <size key="itemSize" width="120" height="100"/>
+                                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="30" maxY="0.0"/>
+                                                                </collectionViewFlowLayout>
+                                                                <cells>
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="category" id="M8S-q9-W68" customClass="CategoryCollectionViewCell" customModule="CleanFood" customModuleProvider="target">
+                                                                        <rect key="frame" x="10" y="2.5" width="120" height="70"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nKj-na-oZy">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <subviews>
+                                                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JF-Ky-Ctq">
+                                                                                    <rect key="frame" x="4.5" y="0.0" width="115.5" height="70"/>
+                                                                                    <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                                                    <state key="normal" title="Button"/>
+                                                                                    <buttonConfiguration key="configuration" style="plain" title="Pizza" titleAlignment="automatic">
+                                                                                        <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="39"/>
+                                                                                    </buttonConfiguration>
+                                                                                </button>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="trailing" secondItem="9JF-Ky-Ctq" secondAttribute="trailing" id="0lI-pV-JDn"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="9JF-Ky-Ctq" secondAttribute="bottom" id="bFz-s5-eoa"/>
+                                                                                <constraint firstItem="9JF-Ky-Ctq" firstAttribute="top" secondItem="nKj-na-oZy" secondAttribute="top" id="edg-HO-hUD"/>
+                                                                            </constraints>
+                                                                        </collectionViewCellContentView>
+                                                                        <size key="customSize" width="120" height="70"/>
+                                                                        <connections>
+                                                                            <outlet property="categoryButton" destination="9JF-Ky-Ctq" id="OWy-gp-GdK"/>
+                                                                        </connections>
+                                                                    </collectionViewCell>
+                                                                </cells>
+                                                            </collectionView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="x2G-FG-cR1" firstAttribute="top" secondItem="n6Z-FR-E5M" secondAttribute="top" id="DDC-8a-Dpy"/>
+                                                            <constraint firstItem="x2G-FG-cR1" firstAttribute="leading" secondItem="n6Z-FR-E5M" secondAttribute="leading" id="czh-i2-1WH"/>
+                                                            <constraint firstAttribute="trailing" secondItem="x2G-FG-cR1" secondAttribute="trailing" id="ymN-OH-EMm"/>
+                                                        </constraints>
+                                                    </collectionViewCellContentView>
+                                                    <size key="customSize" width="410" height="75"/>
+                                                    <connections>
+                                                        <outlet property="collectionView" destination="x2G-FG-cR1" id="SNO-P6-I2u"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="filters" id="0wm-yS-9kG" userLabel="filters" customClass="FiltersCollectionViewCell" customModule="CleanFood" customModuleProvider="target">
+                                                    <rect key="frame" x="7" y="75" width="396" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1r7-zG-emv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="396" height="60"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alignment="center" spacing="25" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j5x-ia-yw2">
+                                                                <rect key="frame" x="20" y="0.0" width="376" height="50"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F i l t e r s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR6-5f-19T">
+                                                                        <rect key="frame" x="0.0" y="13" width="44" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lf8-hh-Qsw">
+                                                                        <rect key="frame" x="69" y="9.5" width="60" height="31"/>
+                                                                        <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="Spicy"/>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3i-d1-rwN">
+                                                                        <rect key="frame" x="154" y="9.5" width="64.5" height="31"/>
+                                                                        <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="Vegan"/>
+                                                                    </button>
+                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-X0-JAT" userLabel="space">
+                                                                        <rect key="frame" x="243.5" y="0.0" width="132.5" height="50"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    </view>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="lf8-hh-Qsw" firstAttribute="width" secondItem="z3i-d1-rwN" secondAttribute="width" multiplier="0.930233" id="9bx-AO-72k"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="Mp4-Ma-7vT"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="j5x-ia-yw2" firstAttribute="top" secondItem="1r7-zG-emv" secondAttribute="top" id="6y0-Ep-fZ9"/>
+                                                            <constraint firstAttribute="trailing" secondItem="j5x-ia-yw2" secondAttribute="trailing" id="B1T-Nx-xHP"/>
+                                                            <constraint firstItem="j5x-ia-yw2" firstAttribute="leading" secondItem="1r7-zG-emv" secondAttribute="leading" constant="20" id="DNE-RX-nEQ"/>
+                                                        </constraints>
+                                                    </collectionViewCellContentView>
+                                                    <size key="customSize" width="396" height="60"/>
+                                                    <connections>
+                                                        <outlet property="filtersLabel" destination="eR6-5f-19T" id="792-FU-ATl"/>
+                                                        <outlet property="spicyFilterButton" destination="lf8-hh-Qsw" id="LLV-6r-ndb"/>
+                                                        <outlet property="veganFilterButton" destination="z3i-d1-rwN" id="qNa-hR-gYU"/>
+                                                    </connections>
+                                                </collectionViewCell>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="menu" id="HXN-35-EH1" userLabel="menuCards">
-                                                    <rect key="frame" x="0.0" y="0.0" width="415" height="128"/>
+                                                    <rect key="frame" x="0.0" y="135" width="415" height="128"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EjR-Ac-Th7">
                                                         <rect key="frame" x="0.0" y="0.0" width="415" height="128"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iC5-i0-2vt">
+                                                                <rect key="frame" x="0.0" y="0.0" width="415" height="128"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gKw-tO-gCl">
+                                                                    <size key="itemSize" width="128" height="128"/>
+                                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                </collectionViewFlowLayout>
+                                                                <cells>
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="card" id="u58-nJ-xi5">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="H0v-xI-OCg">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                        </collectionViewCellContentView>
+                                                                    </collectionViewCell>
+                                                                </cells>
+                                                            </collectionView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="iC5-i0-2vt" firstAttribute="top" secondItem="EjR-Ac-Th7" secondAttribute="top" id="FHb-NB-v00"/>
+                                                            <constraint firstAttribute="trailing" secondItem="iC5-i0-2vt" secondAttribute="trailing" id="ZNb-U9-oMd"/>
+                                                            <constraint firstItem="iC5-i0-2vt" firstAttribute="leading" secondItem="EjR-Ac-Th7" secondAttribute="leading" id="eWh-p1-jp7"/>
+                                                            <constraint firstAttribute="bottom" secondItem="iC5-i0-2vt" secondAttribute="bottom" id="gIA-0u-XiM"/>
+                                                        </constraints>
                                                     </collectionViewCellContentView>
                                                 </collectionViewCell>
                                             </cells>

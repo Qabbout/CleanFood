@@ -29,13 +29,14 @@ extension CategoriesCollectionViewCell: UICollectionViewDelegate, UICollectionVi
         1
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath) as! CategoryCollectionViewCell
+
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath) as! CategoryCollectionViewCell
 //        cell.titleLabel.text = "Pizza"
 
-        return cell
+    return cell
 
-    }
+}
 }
 
 

@@ -36,70 +36,70 @@ class HomeViewController: UICollectionViewController, HomeDisplayLogic {
         button.layer.shouldRasterize = true
         button.layer.rasterizationScale = UIScreen.main.scale
         return button
-        }()
+    }()
 
-        @objc func printit() {
-            print("Workeeeeeeeeeeeeeeeeeeeeeeeeee")
-        }
+    @objc func printit() {
+        print("Workeeeeeeeeeeeeeeeeeeeeeeeeee")
+    }
 
-        override func viewDidLayoutSubviews() {
-            super.viewDidLayoutSubviews()
-            floatingActionButton.frame = .init(x: view.frame.width - 60 - 20, y: view.frame.height - 100, width: 60, height: 60)
-        }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        floatingActionButton.frame = .init(x: view.frame.width - 60 - 20, y: view.frame.height - 100, width: 60, height: 60)
+    }
 
 
 
-        // MARK: Object lifecycle
+    // MARK: Object lifecycle
 
-        override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-            super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-            setup()
-        }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
 
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-            setup()
-        }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
 
-        // MARK: - Setup Clean Code Design Pattern
+    // MARK: - Setup Clean Code Design Pattern
 
-        private func setup() {
-            let viewController = self
-            let interactor = HomeInteractor()
-            let presenter = HomePresenter()
-            let router = HomeRouter()
-            viewController.interactor = interactor
-            viewController.router = router
-            interactor.presenter = presenter
-            presenter.viewController = viewController
-            router.viewController = viewController
-            router.dataStore = interactor
-        }
+    private func setup() {
+        let viewController = self
+        let interactor = HomeInteractor()
+        let presenter = HomePresenter()
+        let router = HomeRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
 
-        // MARK: - Routing
+    // MARK: - Routing
 
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let scene = segue.identifier {
-                let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-                if let router = router, router.responds(to: selector) {
-                    router.perform(selector, with: segue)
-                }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
             }
         }
+    }
 
-        // MARK: - View lifecycle
+    // MARK: - View lifecycle
 
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            view.addSubview(floatingActionButton)
-            floatingActionButton.addTarget(self, action: #selector(printit), for: .touchUpInside)
-            collectionView.contentInsetAdjustmentBehavior = .never
-            doSomething()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(floatingActionButton)
+        floatingActionButton.addTarget(self, action: #selector(printit), for: .touchUpInside)
+        collectionView.contentInsetAdjustmentBehavior = .never
+        doSomething()
 //        doSomethingElse()
-        }
+    }
 
-        //MARK: - receive events from UI
-        //@IBOutlet weak var nameTextField: UITextField!
+    //MARK: - receive events from UI
+    //@IBOutlet weak var nameTextField: UITextField!
 
 //    @IBAction func cancelButtonTapped(_ sender: Any) {
 //
@@ -110,96 +110,82 @@ class HomeViewController: UICollectionViewController, HomeDisplayLogic {
 //    }
 //
 
-        // MARK: - request data from HomeInteractor
+    // MARK: - request data from HomeInteractor
 
-        //@IBOutlet weak var nameTextField: UITextField!
+    //@IBOutlet weak var nameTextField: UITextField!
 
-        func doSomething() {
-            let request = Home.Something.Request()
-            interactor?.doSomething(request: request)
-        }
+    func doSomething() {
+        let request = Home.Something.Request()
+        interactor?.doSomething(request: request)
+    }
 //
 //    func doSomethingElse() {
 //        let request = Home.SomethingElse.Request()
 //        interactor?.doSomethingElse(request: request)
 //    }
 
-        // MARK: - display view model from HomePresenter
+    // MARK: - display view model from HomePresenter
 
-        func displaySomething(viewModel: Home.Something.ViewModel) {
-            //nameTextField.text = viewModel.name
-        }
+    func displaySomething(viewModel: Home.Something.ViewModel) {
+        //nameTextField.text = viewModel.name
+    }
 //
 //    func displaySomethingElse(viewModel: Home.SomethingElse.ViewModel) {
 //        // do sometingElse with viewModel
 //    }
-    }
+}
 
 // MARK: CollectionView Medthods
 
-    extension HomeViewController: UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            switch indexPath.section {
-            case 0:
-                return CGSize(width: view.bounds.width, height: view.bounds.height / 1.5)
-            case 1:
-                return CGSize(width: view.bounds.width, height: 60)
-            case 2:
-                return CGSize(width: view.bounds.width, height: 60)
-            case 3:
-                return CGSize(width: view.bounds.width, height: view.bounds.height / 1.2)
-
-            default:
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch indexPath.section {
+        case 0:
+            return CGSize(width: view.bounds.width, height: view.bounds.height / 1.5)
+        case 1:
                 return CGSize(width: view.bounds.width, height: view.bounds.height)
-            }
+
+        default:
+            return CGSize(width: view.bounds.width, height: view.bounds.height)
         }
+    }
 
 
-        override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            1
-        }
-        override func numberOfSections(in collectionView: UICollectionView) -> Int {
-            4
-        }
-
-
-        override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-            switch indexPath.section {
-            case 0:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCarousel", for: indexPath) as! CarouselMainCollectionViewCell
-
-                return cell
-
-            case 1:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categories", for: indexPath) as! CategoriesCollectionViewCell
-
-
-                return cell
-            case 2:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filters", for: indexPath) as! FiltersCollectionViewCell
-
-
-                return cell
-
-            case 3:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCollectionViewCell
-                return cell
-
-//
-//            case 1:
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filters", for: indexPath) as! FiltersCollectionViewCell
-            default:
-                return UICollectionViewCell.init()
-            }
-
-
-
-
-
-        }
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        1
+    }
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        2
 
 
     }
+
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        switch indexPath.section {
+        case 0:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCarousel", for: indexPath) as! CarouselMainCollectionViewCell
+
+            return cell
+
+        case 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCollectionViewCell
+            return cell
+//
+//            case 1:
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filters", for: indexPath) as! FiltersCollectionViewCell
+        default:
+            return UICollectionViewCell.init()
+        }
+
+
+
+
+
+    }
+
+
+}
