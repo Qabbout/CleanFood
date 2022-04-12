@@ -113,13 +113,13 @@ class HomeViewController: UICollectionViewController, HomeDisplayLogic {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
         case 0:
             return CGSize(width: view.bounds.width, height: view.bounds.height / 1.5)
         default:
-            return CGSize(width: view.bounds.width, height: view.bounds.height / 2)
+            return CGSize(width: view.bounds.width, height: view.bounds.height)
         }
     }
 
@@ -128,7 +128,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         1
     }
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
+        2
     }
 
 
