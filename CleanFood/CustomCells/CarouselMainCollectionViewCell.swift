@@ -10,30 +10,52 @@ import UIKit
 class CarouselMainCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var whiteBG : UIView!
     @IBOutlet weak var pageControl: UIPageControl!
 
+    var currentPage = 1 {
+        didSet {
+            pageControl.currentPage = currentPage
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        whiteBG.layer.cornerRadius = 40
 
+    }
+    override func layoutSubviews() {
 
-
-
-
+        let rect = collectionView.layoutAttributesForItem(at: IndexPath(item: 1, section: 0))?.frame
+        collectionView.scrollRectToVisible(rect!, animated: false)
 
     }
 
+    private func getCurrentPage() -> Int {
 
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        return CGSize(width: super.contentView.frame.width, height: contentView.frame.height)
-//
-//
-//    }
+        let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        if let visibleIndexPath = collectionView.indexPathForItem(at: visiblePoint) {
+            return visibleIndexPath.row
+        }
+
+        return currentPage
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        currentPage = getCurrentPage()
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        currentPage = getCurrentPage()
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        currentPage = getCurrentPage()
+    }
 
 
 
