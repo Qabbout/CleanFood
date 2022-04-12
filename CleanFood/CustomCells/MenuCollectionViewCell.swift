@@ -28,18 +28,16 @@ extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
         1
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
+        0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print(indexPath)
 
         switch indexPath.section {
 
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categories", for: indexPath) as! CategoriesCollectionViewCell
-            return cell
-        case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCards", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCards", for: indexPath) as! CategoriesCollectionViewCell
             return cell
 
         default:
