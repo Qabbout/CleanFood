@@ -73,6 +73,20 @@
                                             <rect key="frame" x="149.5" y="551" width="115.5" height="26"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </pageControl>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kazarov" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho8-w3-cPI" userLabel="Kazarov">
+                                            <rect key="frame" x="157.5" y="70" width="99.5" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="shadowOffset" width="-1" height="0.0"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvX-el-ezn">
+                                            <rect key="frame" x="163.5" y="105" width="87" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="shadowOffset" width="-1" height="0.0"/>
+                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwh-hu-5rH">
                                             <rect key="frame" x="-10" y="592" width="434" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,6 +99,10 @@
                                         <constraint firstAttribute="bottom" secondItem="Gwh-hu-5rH" secondAttribute="bottom" constant="-15" id="4wy-mT-KZk"/>
                                         <constraint firstItem="Gwh-hu-5rH" firstAttribute="leading" secondItem="oZq-Lc-izb" secondAttribute="leading" constant="-10" id="Cph-LC-xml"/>
                                         <constraint firstItem="F5X-hS-47C" firstAttribute="centerX" secondItem="oZq-Lc-izb" secondAttribute="centerX" id="HLn-B2-EvM"/>
+                                        <constraint firstItem="hvX-el-ezn" firstAttribute="top" secondItem="ho8-w3-cPI" secondAttribute="bottom" constant="5" id="Hxw-79-R3E"/>
+                                        <constraint firstItem="hvX-el-ezn" firstAttribute="centerX" secondItem="ho8-w3-cPI" secondAttribute="centerX" id="LFP-Gx-Rfl"/>
+                                        <constraint firstItem="ho8-w3-cPI" firstAttribute="centerX" secondItem="oZq-Lc-izb" secondAttribute="centerX" id="NLd-il-hyV"/>
+                                        <constraint firstItem="ho8-w3-cPI" firstAttribute="top" secondItem="oZq-Lc-izb" secondAttribute="top" constant="70" id="O8X-XC-MSi"/>
                                         <constraint firstAttribute="trailing" secondItem="4lw-0K-dCk" secondAttribute="trailing" id="PjE-JV-ven"/>
                                         <constraint firstAttribute="bottom" secondItem="4lw-0K-dCk" secondAttribute="bottom" id="Sb6-Au-rUl"/>
                                         <constraint firstAttribute="trailing" secondItem="Gwh-hu-5rH" secondAttribute="trailing" constant="-10" id="Xie-Ss-AXD"/>
