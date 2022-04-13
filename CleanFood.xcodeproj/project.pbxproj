@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DAE3A0AB0F0552D84AFD99CA /* Pods_CleanFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7051FAAFE15FCBA46773CD5 /* Pods_CleanFood.framework */; };
 		F766C7652806AA88007D0865 /* LibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766C7642806AA88007D0865 /* LibraryCollectionViewCell.swift */; };
 		F766C7672806B0DF007D0865 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766C7662806B0DF007D0865 /* CardCollectionViewCell.swift */; };
 		F766C7692806B13E007D0865 /* CardsMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766C7682806B13E007D0865 /* CardsMenuCollectionViewCell.swift */; };
+		F76C521A2806F85E009294C2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76C52192806F85E009294C2 /* APIService.swift */; };
+		F76C521D2806FF51009294C2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76C521C2806FF51009294C2 /* Category.swift */; };
+		F76C521F2807002D009294C2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76C521E2807002D009294C2 /* Item.swift */; };
 		F7DBCDB6280403E50081B21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBCDB5280403E50081B21A /* AppDelegate.swift */; };
 		F7DBCDB8280403E50081B21A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBCDB7280403E50081B21A /* SceneDelegate.swift */; };
 		F7DBCDBD280403E50081B21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7DBCDBB280403E50081B21A /* Main.storyboard */; };
@@ -31,9 +35,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3867FAB78C68F36CFC7D2CF9 /* Pods-CleanFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanFood.debug.xcconfig"; path = "Target Support Files/Pods-CleanFood/Pods-CleanFood.debug.xcconfig"; sourceTree = "<group>"; };
+		A7051FAAFE15FCBA46773CD5 /* Pods_CleanFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF16846457A398D8912C00E8 /* Pods-CleanFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanFood.release.xcconfig"; path = "Target Support Files/Pods-CleanFood/Pods-CleanFood.release.xcconfig"; sourceTree = "<group>"; };
 		F766C7642806AA88007D0865 /* LibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F766C7662806B0DF007D0865 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		F766C7682806B13E007D0865 /* CardsMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsMenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		F76C52192806F85E009294C2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		F76C521C2806FF51009294C2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		F76C521E2807002D009294C2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F7DBCDB2280403E50081B21A /* CleanFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DBCDB5280403E50081B21A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7DBCDB7280403E50081B21A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,17 +71,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE3A0AB0F0552D84AFD99CA /* Pods_CleanFood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		680FA7FD19934CA7DCF3FEEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7051FAAFE15FCBA46773CD5 /* Pods_CleanFood.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69B7036D5374BB68428755BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3867FAB78C68F36CFC7D2CF9 /* Pods-CleanFood.debug.xcconfig */,
+				DF16846457A398D8912C00E8 /* Pods-CleanFood.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F76C52182806F6A0009294C2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F76C52192806F85E009294C2 /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F76C521B2806FF44009294C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F76C521C2806FF51009294C2 /* Category.swift */,
+				F76C521E2807002D009294C2 /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F7DBCDA9280403E50081B21A = {
 			isa = PBXGroup;
 			children = (
 				F7DBCDB4280403E50081B21A /* CleanFood */,
 				F7DBCDB3280403E50081B21A /* Products */,
+				69B7036D5374BB68428755BC /* Pods */,
+				680FA7FD19934CA7DCF3FEEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +133,8 @@
 		F7DBCDB4280403E50081B21A /* CleanFood */ = {
 			isa = PBXGroup;
 			children = (
+				F76C521B2806FF44009294C2 /* Models */,
+				F76C52182806F6A0009294C2 /* Services */,
 				F7DBCDD8280414B20081B21A /* CustomCells */,
 				F7DBCDB5280403E50081B21A /* AppDelegate.swift */,
 				F7DBCDB7280403E50081B21A /* SceneDelegate.swift */,
@@ -135,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7DBCDC6280403E70081B21A /* Build configuration list for PBXNativeTarget "CleanFood" */;
 			buildPhases = (
+				6A58BDE753CC50293FE57D09 /* [CP] Check Pods Manifest.lock */,
 				F7DBCDAE280403E50081B21A /* Sources */,
 				F7DBCDAF280403E50081B21A /* Frameworks */,
 				F7DBCDB0280403E50081B21A /* Resources */,
+				F3043077DB5987FB9108E072 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,11 +246,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A58BDE753CC50293FE57D09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CleanFood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3043077DB5987FB9108E072 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleanFood/Pods-CleanFood-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CleanFood/Pods-CleanFood-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CleanFood/Pods-CleanFood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F7DBCDAE280403E50081B21A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F76C521F2807002D009294C2 /* Item.swift in Sources */,
 				F7DBCDD12804052D0081B21A /* HomeRouter.swift in Sources */,
 				F7DBCDB6280403E50081B21A /* AppDelegate.swift in Sources */,
 				F7DBCDD32804052D0081B21A /* HomeViewController.swift in Sources */,
@@ -209,6 +303,7 @@
 				F7E386EF28057706001BC542 /* CategoryCollectionViewCell.swift in Sources */,
 				F7E386ED280575FC001BC542 /* CategoriesCollectionViewCell.swift in Sources */,
 				F766C7672806B0DF007D0865 /* CardCollectionViewCell.swift in Sources */,
+				F76C521D2806FF51009294C2 /* Category.swift in Sources */,
 				F7E386F128058CE9001BC542 /* FiltersCollectionViewCell.swift in Sources */,
 				F7DBCDD42804052D0081B21A /* HomeInteractor.swift in Sources */,
 				F766C7652806AA88007D0865 /* LibraryCollectionViewCell.swift in Sources */,
@@ -216,6 +311,7 @@
 				F7DBCDCF2804052D0081B21A /* HomePresenter.swift in Sources */,
 				F7DBCDD22804052D0081B21A /* HomeModels.swift in Sources */,
 				F7DBCDDC280416490081B21A /* CarouselMainCollectionViewCell.swift in Sources */,
+				F76C521A2806F85E009294C2 /* APIService.swift in Sources */,
 				F766C7692806B13E007D0865 /* CardsMenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +454,7 @@
 		};
 		F7DBCDC7280403E70081B21A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3867FAB78C68F36CFC7D2CF9 /* Pods-CleanFood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -385,6 +482,7 @@
 		};
 		F7DBCDC8280403E70081B21A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF16846457A398D8912C00E8 /* Pods-CleanFood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
