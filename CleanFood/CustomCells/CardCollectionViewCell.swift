@@ -21,13 +21,16 @@ class CardCollectionViewCell: UICollectionViewCell {
         background.layer.cornerRadius = 15
         image.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         image.layer.cornerRadius = 15
+
+        
+
+    }
+    override func layoutSubviews() {
         background.layer.shadowRadius = 5
         background.layer.shadowOpacity = 0.2
         background.layer.shadowOffset = .zero
         background.layer.shadowColor = UIColor.black.cgColor
         background.layer.shouldRasterize = true
         background.layer.rasterizationScale = UIScreen.main.scale
-        
-
     }
 }
