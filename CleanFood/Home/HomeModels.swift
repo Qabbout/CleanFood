@@ -16,39 +16,19 @@ enum Home
 {
     // MARK: Use cases
 
-    enum Something
+    struct Request
     {
-        struct Request
-        {
 
-        }
-
-        struct Response
-        {
-
-        }
-
-        struct ViewModel
-        {
-
-        }
     }
 
-//    enum SomethingElse
-//    {
-//        struct Request
-//        {
-//
-//        }
-//
-//        struct Response
-//        {
-//
-//        }
-//
-//        struct ViewModel
-//        {
-//
-//        }
-//    }
+    struct Response
+    {
+
+    }
+
+    struct ViewModel
+    {
+
+    }
+
 }

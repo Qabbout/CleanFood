@@ -12,14 +12,12 @@
 
 import UIKit
 
-protocol HomeDisplayLogic: AnyObject {
-    func displaySomething(viewModel: Home.Something.ViewModel)
-//    func displaySomethingElse(viewModel: Home.SomethingElse.ViewModel)
-}
 
-class HomeViewController: UICollectionViewController, HomeDisplayLogic {
-    var interactor: HomeBusinessLogic?
-    var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+
+class HomeViewController: UICollectionViewController, HomeDisplayConfiguration {
+    
+    var interactor: HomeInteractorConfiguration?
+    var router: (NSObjectProtocol & HomeRoutingConfiguration & HomeDataPassing)?
 
     private let floatingActionButton: UIButton = {
         let button = UIButton()
@@ -38,43 +36,12 @@ class HomeViewController: UICollectionViewController, HomeDisplayLogic {
         return button
     }()
 
-    @objc func printit() {
-        print("Workeeeeeeeeeeeeeeeeeeeeeeeeee")
-    }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         floatingActionButton.frame = .init(x: view.frame.width - 60 - 20, y: view.frame.height - 100, width: 60, height: 60)
     }
 
-
-
-    // MARK: Object lifecycle
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-
-    // MARK: - Setup Clean Code Design Pattern
-
-    private func setup() {
-        let viewController = self
-        let interactor = HomeInteractor()
-        let presenter = HomePresenter()
-        let router = HomeRouter()
-        viewController.interactor = interactor
-        viewController.router = router
-        interactor.presenter = presenter
-        presenter.viewController = viewController
-        router.viewController = viewController
-        router.dataStore = interactor
-    }
 
     // MARK: - Routing
 
@@ -91,55 +58,35 @@ class HomeViewController: UICollectionViewController, HomeDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(floatingActionButton)
-        floatingActionButton.addTarget(self, action: #selector(printit), for: .touchUpInside)
+        addFAB()
+
         collectionView.contentInsetAdjustmentBehavior = .never
+
+        HomeConfigurator.shared.configure(viewController: self)
+
         doSomething()
-//        doSomethingElse()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let categories = APIService.shared.getCategories()
-        let items = APIService.shared.getItems(categoryId: "1")
-   
     }
 
-    //MARK: - receive events from UI
-    //@IBOutlet weak var nameTextField: UITextField!
+    private func addFAB() {
+        view.addSubview(floatingActionButton)
+//        floatingActionButton.addTarget(self, action: #selector(printit), for: .touchUpInside)
 
-//    @IBAction func cancelButtonTapped(_ sender: Any) {
-//
-//    }
-//
-//    @IBAction func confirmButtonTapped(_ sender: Any) {
-//
-//    }
-//
-
-    // MARK: - request data from HomeInteractor
-
-    //@IBOutlet weak var nameTextField: UITextField!
+    }
 
     func doSomething() {
-        let request = Home.Something.Request()
+        let request = Home.Request()
         interactor?.doSomething(request: request)
     }
-//
-//    func doSomethingElse() {
-//        let request = Home.SomethingElse.Request()
-//        interactor?.doSomethingElse(request: request)
-//    }
 
     // MARK: - display view model from HomePresenter
 
-    func displaySomething(viewModel: Home.Something.ViewModel) {
+    func displaySomething(viewModel: Home.ViewModel) {
         //nameTextField.text = viewModel.name
     }
-//
-//    func displaySomethingElse(viewModel: Home.SomethingElse.ViewModel) {
-//        // do sometingElse with viewModel
-//    }
+
+
 }
+
 
 // MARK: CollectionView Medthods
 
@@ -151,7 +98,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         case 0:
             return CGSize(width: view.bounds.width, height: view.bounds.height / 1.5)
         case 1:
-                return CGSize(width: view.bounds.width, height: view.bounds.height)
+            return CGSize(width: view.bounds.width, height: view.bounds.height)
 
         default:
             return CGSize(width: view.bounds.width, height: view.bounds.height)
@@ -164,10 +111,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         2
-
-
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
@@ -180,9 +124,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCollectionViewCell
             return cell
-//
-//            case 1:
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filters", for: indexPath) as! FiltersCollectionViewCell
+
         default:
             return UICollectionViewCell.init()
         }

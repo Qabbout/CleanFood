@@ -12,15 +12,9 @@
 
 import UIKit
 
-@objc protocol HomeRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-}
 
-protocol HomeDataPassing {
-    var dataStore: HomeDataStore? { get }
-}
 
-class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
+class HomeRouter: NSObject, HomeRoutingConfiguration, HomeDataPassing {
     weak var viewController: HomeViewController?
     var dataStore: HomeDataStore?
 

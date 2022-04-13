@@ -14,6 +14,7 @@
 		F76C521A2806F85E009294C2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76C52192806F85E009294C2 /* APIService.swift */; };
 		F76C521D2806FF51009294C2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76C521C2806FF51009294C2 /* Category.swift */; };
 		F76C521F2807002D009294C2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76C521E2807002D009294C2 /* Item.swift */; };
+		F76C5221280708BF009294C2 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76C5220280708BF009294C2 /* HomeConfigurator.swift */; };
 		F7DBCDB6280403E50081B21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBCDB5280403E50081B21A /* AppDelegate.swift */; };
 		F7DBCDB8280403E50081B21A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBCDB7280403E50081B21A /* SceneDelegate.swift */; };
 		F7DBCDBD280403E50081B21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7DBCDBB280403E50081B21A /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		F76C52192806F85E009294C2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F76C521C2806FF51009294C2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F76C521E2807002D009294C2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F76C5220280708BF009294C2 /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
 		F7DBCDB2280403E50081B21A /* CleanFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DBCDB5280403E50081B21A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7DBCDB7280403E50081B21A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,13 +152,14 @@
 		F7DBCDD5280405360081B21A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F7DBCDCD2804052D0081B21A /* HomeViewController.swift */,
+				F7DBCDCE2804052D0081B21A /* HomeInteractor.swift */,
 				F7DBCDC92804052D0081B21A /* HomePresenter.swift */,
 				F7DBCDCA2804052D0081B21A /* HomeWorker.swift */,
 				F7DBCDCB2804052D0081B21A /* HomeRouter.swift */,
 				F7DBCDCC2804052D0081B21A /* HomeModels.swift */,
-				F7DBCDCD2804052D0081B21A /* HomeViewController.swift */,
 				F7DBCDEE2804493B0081B21A /* Home.storyboard */,
-				F7DBCDCE2804052D0081B21A /* HomeInteractor.swift */,
+				F76C5220280708BF009294C2 /* HomeConfigurator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				F7DBCDCF2804052D0081B21A /* HomePresenter.swift in Sources */,
 				F7DBCDD22804052D0081B21A /* HomeModels.swift in Sources */,
 				F7DBCDDC280416490081B21A /* CarouselMainCollectionViewCell.swift in Sources */,
+				F76C5221280708BF009294C2 /* HomeConfigurator.swift in Sources */,
 				F76C521A2806F85E009294C2 /* APIService.swift in Sources */,
 				F766C7692806B13E007D0865 /* CardsMenuCollectionViewCell.swift in Sources */,
 			);

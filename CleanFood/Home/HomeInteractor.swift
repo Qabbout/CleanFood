@@ -12,27 +12,20 @@
 
 import UIKit
 
-protocol HomeBusinessLogic {
-    func doSomething(request: Home.Something.Request)
-//    func doSomethingElse(request: Home.SomethingElse.Request)
-}
 
-protocol HomeDataStore {
-    //var name: String { get set }
-}
 
-class HomeInteractor: HomeBusinessLogic, HomeDataStore {
-    var presenter: HomePresentationLogic?
+class HomeInteractor: HomeInteractorConfiguration, HomeDataStore {
+    var presenter: HomePresenterConfiguration?
     var worker: HomeWorker?
     //var name: String = ""
 
     // MARK: Do something (and send response to HomePresenter)
 
-    func doSomething(request: Home.Something.Request) {
+    func doSomething(request: Home.Request) {
         worker = HomeWorker()
         worker?.doSomeWork()
 
-        let response = Home.Something.Response()
+        let response = Home.Response()
         presenter?.presentSomething(response: response)
     }
 //

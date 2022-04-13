@@ -14,10 +14,7 @@ import UIKit
 
 class HomeWorker {
     func doSomeWork() {
-        
+
     }
-//    
-//    func doSomeOtherWork() {
-//
-//    }
+
 }
