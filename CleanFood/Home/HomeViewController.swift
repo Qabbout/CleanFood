@@ -97,6 +97,12 @@ class HomeViewController: UICollectionViewController, HomeDisplayLogic {
         doSomething()
 //        doSomethingElse()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let categories = APIService.shared.getCategories()
+        let items = APIService.shared.getItems(categoryId: "1")
+   
+    }
 
     //MARK: - receive events from UI
     //@IBOutlet weak var nameTextField: UITextField!
