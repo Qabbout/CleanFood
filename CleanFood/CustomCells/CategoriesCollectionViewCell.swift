@@ -9,6 +9,8 @@ import UIKit
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
 
+    private let currentCategoryIndex: Int = 0
+
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -32,7 +34,9 @@ extension CategoriesCollectionViewCell: UICollectionViewDelegate, UICollectionVi
 
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath) as! CategoryCollectionViewCell
-//        cell.titleLabel.text = "Pizza"
+    if indexPath.item == currentCategoryIndex {
+        cell.categoryButton.tintColor = .black
+    }
 
     return cell
 
