@@ -30,7 +30,7 @@ extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section{
             case 0:
-                return CGSize(width: contentView.bounds.width, height: 77)
+                return CGSize(width: contentView.bounds.width, height: 80)
             case 1:
                 return CGSize(width: contentView.bounds.width, height: 50)
 //            case 2:

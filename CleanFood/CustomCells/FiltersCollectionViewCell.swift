@@ -22,12 +22,12 @@ class FiltersCollectionViewCell: UICollectionViewCell {
     private func setupButtonsUI() {
         spicyFilterButton.layer.borderWidth = 1.0
         spicyFilterButton.layer.borderColor = UIColor.secondaryLabel.cgColor
-        spicyFilterButton.layer.cornerRadius = 5.0
+        spicyFilterButton.layer.cornerRadius = 15.0
         spicyFilterButton.clipsToBounds = true
 
         veganFilterButton.layer.borderWidth = 1.0
         veganFilterButton.layer.borderColor = UIColor.secondaryLabel.cgColor
-        veganFilterButton.layer.cornerRadius = 5.0
+        veganFilterButton.layer.cornerRadius = 15.0
         veganFilterButton.clipsToBounds = true
 
     }
