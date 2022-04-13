@@ -15,28 +15,31 @@ class LibraryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self
+
+        
     }
 }
 
 
 extension LibraryCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch indexPath.section{
-            case 0:
-                return CGSize(width: contentView.bounds.width, height: 80)
-            case 1:
-                return CGSize(width: contentView.bounds.width, height: 50)
-                    //            case 2:
-                    //                return CGSize(width: contentView.bounds.width, height: contentView.bounds.height / 1.2)
+        switch indexPath.section {
+        case 0:
+            return CGSize(width: contentView.bounds.width, height: 80)
+        case 1:
+            return CGSize(width: contentView.bounds.width, height: 50)
+        case 2:
+            return CGSize(width: contentView.bounds.width, height: contentView.bounds.height / 1.2)
 
-            default:
-                return CGSize(width: contentView.bounds.width, height: contentView.bounds.height)
+        default:
+            return CGSize(width: contentView.bounds.width, height: contentView.bounds.height)
         }
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        3
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         1
@@ -56,9 +59,9 @@ extension LibraryCollectionViewCell: UICollectionViewDelegate, UICollectionViewD
 
             return cell
 
-            //        case 2:
-            //            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCards", for: indexPath) as! MenuCollectionViewCell
-            //            return cell
+        case 2:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menu", for: indexPath) as! CardsMenuCollectionViewCell
+            return cell
 
 
         default:

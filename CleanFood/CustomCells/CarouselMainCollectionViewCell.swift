@@ -10,7 +10,7 @@ import UIKit
 class CarouselMainCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var whiteBG : UIView!
+    @IBOutlet weak var whiteBG: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
 
     var currentPage = 1 {

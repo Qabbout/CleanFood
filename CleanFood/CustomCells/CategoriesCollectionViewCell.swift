@@ -8,8 +8,16 @@
 import UIKit
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
+    private var indexPath: IndexPath!
 
-    private let currentCategoryIndex: Int = 0
+    private var currentCategoryIndex: Int = 0 {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
+                self?.collectionView.scrollToItem(at: IndexPath(item: self?.currentCategoryIndex ?? 0, section: 0), at: .centeredHorizontally, animated: true)
+            }
+        }
+    }
 
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -18,7 +26,22 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self
+
+        NotificationCenter.default.addObserver(self, selector: #selector(gotNewIndex(_:)), name: NSNotification.Name("collectionLibrary"), object: nil)
     }
+    deinit {
+        NotificationCenter.default
+            .removeObserver(self,
+                            name: NSNotification.Name("collectionLibrary"),
+                            object: nil) }
+
+
+    @objc private func gotNewIndex(_ notification: Notification) {
+        let indexPath = notification.object as! IndexPath
+        self.indexPath = indexPath
+        currentCategoryIndex = indexPath.section
+    }
+
 
 }
 
@@ -32,15 +55,19 @@ extension CategoriesCollectionViewCell: UICollectionViewDelegate, UICollectionVi
     }
 
 
-func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath) as! CategoryCollectionViewCell
-    if indexPath.item == currentCategoryIndex {
-        cell.categoryButton.tintColor = .black
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+      
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath) as! CategoryCollectionViewCell
+        if indexPath.item == currentCategoryIndex {
+            cell.categoryButton.tintColor = .black
+        }
+        else {
+            cell.categoryButton.tintColor = .secondaryLabel
+        }
+
+        return cell
+
     }
-
-    return cell
-
-}
 }
 
 
