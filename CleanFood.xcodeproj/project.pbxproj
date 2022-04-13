@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F766C7652806AA88007D0865 /* LibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766C7642806AA88007D0865 /* LibraryCollectionViewCell.swift */; };
+		F766C7672806B0DF007D0865 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766C7662806B0DF007D0865 /* CardCollectionViewCell.swift */; };
+		F766C7692806B13E007D0865 /* CardsMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766C7682806B13E007D0865 /* CardsMenuCollectionViewCell.swift */; };
 		F7DBCDB6280403E50081B21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBCDB5280403E50081B21A /* AppDelegate.swift */; };
 		F7DBCDB8280403E50081B21A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBCDB7280403E50081B21A /* SceneDelegate.swift */; };
 		F7DBCDBD280403E50081B21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7DBCDBB280403E50081B21A /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		F766C7642806AA88007D0865 /* LibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCollectionViewCell.swift; sourceTree = "<group>"; };
+		F766C7662806B0DF007D0865 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		F766C7682806B13E007D0865 /* CardsMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7DBCDB2280403E50081B21A /* CleanFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DBCDB5280403E50081B21A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7DBCDB7280403E50081B21A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				F7E386EC280575FC001BC542 /* CategoriesCollectionViewCell.swift */,
 				F7E386EE28057706001BC542 /* CategoryCollectionViewCell.swift */,
 				F766C7642806AA88007D0865 /* LibraryCollectionViewCell.swift */,
+				F766C7682806B13E007D0865 /* CardsMenuCollectionViewCell.swift */,
+				F766C7662806B0DF007D0865 /* CardCollectionViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 				F7DBCDD02804052D0081B21A /* HomeWorker.swift in Sources */,
 				F7E386EF28057706001BC542 /* CategoryCollectionViewCell.swift in Sources */,
 				F7E386ED280575FC001BC542 /* CategoriesCollectionViewCell.swift in Sources */,
+				F766C7672806B0DF007D0865 /* CardCollectionViewCell.swift in Sources */,
 				F7E386F128058CE9001BC542 /* FiltersCollectionViewCell.swift in Sources */,
 				F7DBCDD42804052D0081B21A /* HomeInteractor.swift in Sources */,
 				F766C7652806AA88007D0865 /* LibraryCollectionViewCell.swift in Sources */,
@@ -209,6 +216,7 @@
 				F7DBCDCF2804052D0081B21A /* HomePresenter.swift in Sources */,
 				F7DBCDD22804052D0081B21A /* HomeModels.swift in Sources */,
 				F7DBCDDC280416490081B21A /* CarouselMainCollectionViewCell.swift in Sources */,
+				F766C7692806B13E007D0865 /* CardsMenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
