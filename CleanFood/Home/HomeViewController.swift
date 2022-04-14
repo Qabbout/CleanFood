@@ -15,13 +15,32 @@ import UIKit
 
 
 class HomeViewController: UICollectionViewController, HomeDisplayConfiguration {
-    
+
+    var categoryIndex: String = "1" {
+        didSet {
+            interactorRequestItemsOfCategory(categoryIndexString: categoryIndex)
+        }
+    }
     var interactor: HomeInteractorConfiguration?
     var router: (NSObjectProtocol & HomeRoutingConfiguration & HomeDataPassing)?
 
+    var categories: Categories? {
+        didSet {
+            NotificationCenter.default
+                .post(name: NSNotification.Name("categories"),
+                      object: categories) }
+
+    }
+
+    var items: Items? {
+        didSet {
+            NotificationCenter.default
+                .post(name: NSNotification.Name("items"),
+                      object: items) }
+    }
+
     private let floatingActionButton: UIButton = {
         let button = UIButton()
-
         button.layer.masksToBounds = false
         button.layer.cornerRadius = 30
         button.backgroundColor = .white
@@ -43,18 +62,7 @@ class HomeViewController: UICollectionViewController, HomeDisplayConfiguration {
     }
 
 
-    // MARK: - Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-
-    // MARK: - View lifecycle
+// MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +71,23 @@ class HomeViewController: UICollectionViewController, HomeDisplayConfiguration {
         collectionView.contentInsetAdjustmentBehavior = .never
 
         HomeConfigurator.shared.configure(viewController: self)
+        interactorRequestCategories()
+        interactorRequestItemsOfCategory()
 
-        doSomething()
+        NotificationCenter.default.addObserver(self, selector: #selector(interactorGetNewItems(_:)), name: NSNotification.Name("newCategory"), object: nil)
+
+    }
+
+    deinit {
+        NotificationCenter.default
+            .removeObserver(self,
+                            name: NSNotification.Name("newCategory"),
+                            object: nil) }
+
+    @objc private func interactorGetNewItems(_ notification: Notification) {
+        self.categoryIndex = notification.object as! String
+
+
     }
 
     private func addFAB() {
@@ -73,15 +96,25 @@ class HomeViewController: UICollectionViewController, HomeDisplayConfiguration {
 
     }
 
-    func doSomething() {
-        let request = Home.Request()
-        interactor?.doSomething(request: request)
+
+    func interactorRequestCategories() {
+        let request = Home.RequestCategories()
+        interactor?.workerGetCategories(request: request)
     }
 
-    // MARK: - display view model from HomePresenter
+    func interactorRequestItemsOfCategory(categoryIndexString: String = "1") {
+        let request = Home.RequestItemsOfACategory(at: categoryIndexString)
+        interactor?.workerGetItemsOfACategory(request: request)
+    }
 
-    func displaySomething(viewModel: Home.ViewModel) {
-        //nameTextField.text = viewModel.name
+// MARK: - display view model from HomePresenter
+
+    func displayCategories(viewModel: Home.ViewModelCategories) {
+        self.categories = viewModel.categories
+    }
+
+    func displayItemsOfACategory(viewModel: Home.ViewModelItemsOfACategory) {
+        self.items = viewModel.items
     }
 
 
@@ -94,12 +127,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
         switch indexPath.section {
         case 0:
             return CGSize(width: view.bounds.width, height: view.bounds.height / 1.5)
         case 1:
             return CGSize(width: view.bounds.width, height: view.bounds.height)
-
         default:
             return CGSize(width: view.bounds.width, height: view.bounds.height)
         }

@@ -15,25 +15,28 @@ import UIKit
 
 
 class HomeInteractor: HomeInteractorConfiguration, HomeDataStore {
+    var items: Items?
+
     var presenter: HomePresenterConfiguration?
-    var worker: HomeWorker?
-    //var name: String = ""
+    let worker: HomeWorker = HomeWorker()
+
 
     // MARK: Do something (and send response to HomePresenter)
 
-    func doSomething(request: Home.Request) {
-        worker = HomeWorker()
-        worker?.doSomeWork()
+    func workerGetCategories(request: Home.RequestCategories) {
 
-        let response = Home.Response()
-        presenter?.presentSomething(response: response)
+
+        worker.getCategories(completion: { [weak self] response in
+            self?.presenter?.presentCategories(response: response)
+        })
+
     }
-//
-//    func doSomethingElse(request: Home.SomethingElse.Request) {
-//        worker = HomeWorker()
-//        worker?.doSomeOtherWork()
-//
-//        let response = Home.SomethingElse.Response()
-//        presenter?.presentSomethingElse(response: response)
-//    }
+    func workerGetItemsOfACategory(request: Home.RequestItemsOfACategory) {
+
+        worker.getItemsOfACategory(request: request) { [weak self] response in
+            self?.presenter?.presentItemsOfACategory(response: response)
+
+        }
+    }
+
 }

@@ -16,10 +16,17 @@ import UIKit
 class HomePresenter: HomePresenterConfiguration {
     weak var viewController: HomeDisplayConfiguration?
 
-    // MARK: Parse and calc respnse from HomeInteractor and send simple view model to HomeViewController to be displayed
-
-    func presentSomething(response: Home.Response) {
-        let viewModel = Home.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentCategories(response: Home.ResponseCategories) {
+        guard let categories = response.categories else { return }
+        let viewModel = Home.ViewModelCategories(categories: categories)
+        viewController?.displayCategories(viewModel: viewModel)
     }
+
+    func presentItemsOfACategory(response: Home.ResponseItemsOfACategory) {
+        guard let items = response.items else { return }
+        let viewModel = Home.ViewModelItemsOfACategory(items: items)
+        viewController?.displayItemsOfACategory(viewModel: viewModel)
+    }
+
+
 }

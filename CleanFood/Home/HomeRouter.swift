@@ -15,34 +15,32 @@ import UIKit
 
 
 class HomeRouter: NSObject, HomeRoutingConfiguration, HomeDataPassing {
+
     weak var viewController: HomeViewController?
     var dataStore: HomeDataStore?
 
 // MARK: Routing (navigating to other screens)
-
-//func routeToSomewhere(segue: UIStoryboardSegue?) {
-//    if let segue = segue {
-//        let destinationVC = segue.destination as! SomewhereViewController
-//        var destinationDS = destinationVC.router!.dataStore!
-//        passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-//    } else {
+//
+//func routeToCart() {
+//
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
+//        let destinationVC = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
 //        var destinationDS = destinationVC.router!.dataStore!
-//        passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-//        navigateToSomewhere(source: viewController!, destination: destinationVC)
-//    }
+//        passDataToCart(source: dataStore!, destination: &destinationDS)
+//        navigateToCart(source: viewController!, destination: destinationVC)
+//
 // }
-
-// MARK: Navigation to other screen
-
-//func navigateToSomewhere(source: HomeViewController, destination: SomewhereViewController) {
-//    source.show(destination, sender: nil)
+//
+//// MARK: Navigation to other screen
+//
+//func navigateToCart(source: HomeViewController, destination: CartViewController) {
+//    source.navigationController?.pushViewController(destination, animated: true)
+//
 //}
-
-// MARK: Passing data to other screen
-
-//    func passDataToSomewhere(source: HomeDataStore, destination: inout SomewhereDataStore) {
-//        destination.name = source.name
+//
+//// MARK: Passing data to other screen
+//
+//    func passDataToCart(source: HomeDataStore, destination: inout CartViewController) {
+//        destination.items = source.items
 //    }
 }

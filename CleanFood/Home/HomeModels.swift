@@ -16,18 +16,41 @@ enum Home
 {
     // MARK: Use cases
 
-    struct Request
+
+    struct RequestCategories
     {
 
     }
 
-    struct Response
+    struct RequestItemsOfACategory
     {
+        var categoryIndexString: String
+
+        init (at categoryIndexString: String) {
+            self.categoryIndexString = categoryIndexString
+        }
+    }
+
+    struct ResponseCategories
+    {
+        let categories: Categories?
+    }
+
+    struct ResponseItemsOfACategory
+    {
+        let items: Items?
 
     }
 
-    struct ViewModel
+    struct ViewModelCategories
     {
+        let categories: Categories
+    }
+
+    struct ViewModelItemsOfACategory
+    {
+
+        let items: Items
 
     }
 
