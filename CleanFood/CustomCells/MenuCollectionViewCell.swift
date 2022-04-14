@@ -8,8 +8,23 @@
 import UIKit
 
 class MenuCollectionViewCell: UICollectionViewCell {
+    var currentIndex: Int = 0 {
+        didSet {
+            NotificationCenter.default.post(name: NSNotification.Name("newCategory"), object: String(currentIndex + 1 ))
+            print("CURRENTINDEX: \(currentIndex)")
+//            self.collectionView.reloadData()
+        }
+    }
 
-    var currentIndex: Int = 0
+    
+    var categories: Categories? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
+            }
+
+        }
+    }
 
 
 
@@ -22,12 +37,27 @@ class MenuCollectionViewCell: UICollectionViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
 
+        NotificationCenter.default.addObserver(self, selector: #selector(gotCategories(_:)), name: NSNotification.Name("categories"), object: nil)
+
+    }
+
+    deinit {
+        NotificationCenter.default
+            .removeObserver(self,
+                            name: NSNotification.Name("categories"),
+                            object: nil) }
+
+    @objc private func gotCategories(_ notification: Notification) {
+        self.categories = notification.object as? Categories
+
     }
 
 
 }
 
 extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
@@ -38,6 +68,7 @@ extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         getIndexAndNotify()
+
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -45,8 +76,6 @@ extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
 
     }
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        getIndexAndNotify() }
 
 
 
@@ -54,16 +83,21 @@ extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
     func getIndexAndNotify() {
         guard let cell = collectionView.visibleCells.first else { return }
         let indexPath = collectionView.indexPath(for: cell)
-        NotificationCenter.default
-            .post(name: NSNotification.Name("collectionLibrary"),
-                  object: indexPath) }
+        if indexPath?.section != currentIndex {
+            currentIndex = indexPath?.section ?? currentIndex
+            NotificationCenter.default
+                .post(name: NSNotification.Name("collectionLibrary"),
+                      object: indexPath) }
+        }
+
+
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         1
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        5
+        categories?.count ?? 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

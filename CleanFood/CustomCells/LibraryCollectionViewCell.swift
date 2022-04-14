@@ -50,6 +50,7 @@ extension LibraryCollectionViewCell: UICollectionViewDelegate, UICollectionViewD
 
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categories", for: indexPath) as! CategoriesCollectionViewCell
+
             return cell
 
 
