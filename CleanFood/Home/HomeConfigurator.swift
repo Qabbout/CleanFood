@@ -10,21 +10,24 @@ import UIKit
 
 // View Controller -> Interactor
 protocol HomeInteractorConfiguration {
-    func doSomething(request: Home.Request)
+    func workerGetCategories(request: Home.RequestCategories)
+    func workerGetItemsOfACategory(request: Home.RequestItemsOfACategory)
 
 }
 
 
 // Interactor -> Presenter
 protocol HomePresenterConfiguration {
-    func presentSomething(response: Home.Response)
+    func presentCategories(response: Home.ResponseCategories)
+    func presentItemsOfACategory(response: Home.ResponseItemsOfACategory)
 }
 
 // Presentor -> View Controller
 protocol HomeDisplayConfiguration: AnyObject {
-    func displaySomething(viewModel: Home.ViewModel)
+    func displayCategories(viewModel: Home.ViewModelCategories)
+    func displayItemsOfACategory(viewModel: Home.ViewModelItemsOfACategory)
 
-}   
+}
 
 // Interactor -> Worker
 protocol HomeWorkerConfiguration {
@@ -32,11 +35,9 @@ protocol HomeWorkerConfiguration {
 }
 
 
-
-
 // View Controller -> Route
 protocol HomeRoutingConfiguration {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+//    func routeToCart()
 }
 
 protocol HomeDataPassing {
@@ -45,7 +46,7 @@ protocol HomeDataPassing {
 
 // Data Store of Route
 protocol HomeDataStore {
-    //var name: String { get set }
+    var items: Items? { get }
 }
 
 
