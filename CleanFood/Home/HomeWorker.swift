@@ -13,8 +13,19 @@
 import UIKit
 
 class HomeWorker {
-    func doSomeWork() {
 
+    func getCategories(completion: @escaping (Home.ResponseCategories) -> Void) {
+        APIService.shared.getCategories { categories in
+            completion(.init(categories: categories))
+        }
+
+    }
+
+    func getItemsOfACategory(request: Home.RequestItemsOfACategory ,completion: @escaping (Home.ResponseItemsOfACategory) -> Void) {
+
+        APIService.shared.getItems(categoryId: request.categoryIndexString) { items in
+            completion(.init(items: items))
+        }
     }
 
 }
