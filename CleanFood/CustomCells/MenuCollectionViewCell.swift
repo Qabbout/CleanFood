@@ -10,13 +10,13 @@ import UIKit
 class MenuCollectionViewCell: UICollectionViewCell {
     var currentIndex: Int = 0 {
         didSet {
-            NotificationCenter.default.post(name: NSNotification.Name("newCategory"), object: String(currentIndex + 1 ))
+            NotificationCenter.default.post(name: NSNotification.Name("newCategory"), object: String(currentIndex + 1))
             print("CURRENTINDEX: \(currentIndex)")
 //            self.collectionView.reloadData()
         }
     }
 
-    
+
     var categories: Categories? {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -26,6 +26,14 @@ class MenuCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    var items: Items? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
+            }
+
+        }
+    }
 
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -37,18 +45,6 @@ class MenuCollectionViewCell: UICollectionViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        NotificationCenter.default.addObserver(self, selector: #selector(gotCategories(_:)), name: NSNotification.Name("categories"), object: nil)
-
-    }
-
-    deinit {
-        NotificationCenter.default
-            .removeObserver(self,
-                            name: NSNotification.Name("categories"),
-                            object: nil) }
-
-    @objc private func gotCategories(_ notification: Notification) {
-        self.categories = notification.object as? Categories
 
     }
 
@@ -88,7 +84,7 @@ extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
             NotificationCenter.default
                 .post(name: NSNotification.Name("collectionLibrary"),
                       object: indexPath) }
-        }
+    }
 
 
 
@@ -103,6 +99,10 @@ extension MenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "library", for: indexPath) as! LibraryCollectionViewCell
+
+        cell.categories = self.categories
+        cell.items = self.items
+
         return cell
 
 

@@ -26,17 +26,21 @@ class HomeViewController: UICollectionViewController, HomeDisplayConfiguration {
 
     var categories: Categories? {
         didSet {
-            NotificationCenter.default
-                .post(name: NSNotification.Name("categories"),
-                      object: categories) }
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
+            }
 
+        }
     }
+    
 
     var items: Items? {
         didSet {
-            NotificationCenter.default
-                .post(name: NSNotification.Name("items"),
-                      object: items) }
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
+            }
+
+        }
     }
 
     private let floatingActionButton: UIButton = {
@@ -156,6 +160,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCollectionViewCell
+                cell.categories = self.categories
+                cell.items = self.items
             return cell
 
         default:

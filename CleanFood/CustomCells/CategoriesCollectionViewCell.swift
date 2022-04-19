@@ -17,8 +17,9 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
 
             DispatchQueue.main.async { [weak self] in
 
+
                 self?.collectionView.scrollToItem(at: IndexPath(item: self?.currentCategoryIndex ?? 0, section: 0), at: .centeredHorizontally, animated: true)
-                self?.collectionView.reloadData()
+//                self?.collectionView.reloadData()
 
             }
 
@@ -42,16 +43,10 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self
-
-        NotificationCenter.default.addObserver(self, selector: #selector(gotCategories(_:)), name: NSNotification.Name("categories"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(gotNewIndex(_:)), name: NSNotification.Name("collectionLibrary"), object: nil)
 
     }
     deinit {
-        NotificationCenter.default
-            .removeObserver(self,
-                            name: NSNotification.Name("categories"),
-                            object: nil)
         NotificationCenter.default
             .removeObserver(self,
                             name: NSNotification.Name("collectionLibrary"),
@@ -67,9 +62,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         self.indexPath = indexPath
         currentCategoryIndex = indexPath.section
     }
-    @objc private func gotCategories(_ notification: Notification) {
-        self.categories = notification.object as? Categories
-    }
+
 
 
 }

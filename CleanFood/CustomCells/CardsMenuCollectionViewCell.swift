@@ -11,7 +11,9 @@ import SDWebImage
 class CardsMenuCollectionViewCell: UICollectionViewCell {
     var items: Items? {
         didSet {
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
 
@@ -21,18 +23,6 @@ class CardsMenuCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self
-
-        NotificationCenter.default.addObserver(self, selector: #selector(gotItems(_:)), name: NSNotification.Name("items"), object: nil)
-    }
-
-    deinit {
-        NotificationCenter.default
-            .removeObserver(self,
-                            name: NSNotification.Name("items"),
-                            object: nil) }
-
-    @objc private func gotItems(_ notification: Notification) {
-        self.items = notification.object as? Items
 
     }
 
@@ -44,7 +34,7 @@ extension CardsMenuCollectionViewCell: UICollectionViewDelegate, UICollectionVie
 
 
         CGSize(width: UIScreen.main.bounds.width, height:
-                UIScreen.main.bounds.height / 1.8)
+            UIScreen.main.bounds.height / 1.8)
     }
 
 
@@ -60,8 +50,8 @@ extension CardsMenuCollectionViewCell: UICollectionViewDelegate, UICollectionVie
             cell.descriptionLabel.text = items[indexPath.item].itemDescription
             cell.ingredientsLabel.text = items[indexPath.item].ingredients
             cell.image.sd_setImage(with: URL(string:
-                                                items[indexPath.item].image))
-            
+                items[indexPath.item].image))
+
         }
 
 

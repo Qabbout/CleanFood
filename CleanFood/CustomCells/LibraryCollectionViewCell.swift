@@ -11,19 +11,36 @@ class LibraryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    var categories: Categories? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
+            }
+
+        }
+    }
+    var items: Items? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
+            }
+
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        
+
     }
 }
 
 
 extension LibraryCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-   
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
         case 0:
@@ -51,6 +68,8 @@ extension LibraryCollectionViewCell: UICollectionViewDelegate, UICollectionViewD
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categories", for: indexPath) as! CategoriesCollectionViewCell
 
+            cell.categories = self.categories
+
             return cell
 
 
@@ -62,6 +81,8 @@ extension LibraryCollectionViewCell: UICollectionViewDelegate, UICollectionViewD
 
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menu", for: indexPath) as! CardsMenuCollectionViewCell
+
+            cell.items = self.items
             return cell
 
 
