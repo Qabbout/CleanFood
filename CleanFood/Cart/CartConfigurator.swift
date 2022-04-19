@@ -42,12 +42,12 @@ protocol CartRoutingConfiguration {
 }
 
 protocol CartDataPassing {
-    var dataStore: CartDataStore? { get }
+    var dataStore: CartDataStore? { get set }
 }
 
     // Data Store of Route
 protocol CartDataStore {
-    var items: Items? { get }
+    var items: Items? { get set }
 }
 
 

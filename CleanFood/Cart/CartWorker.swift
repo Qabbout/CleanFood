@@ -13,11 +13,5 @@
 import UIKit
 
 class CartWorker: CartWorkerConfiguration {
-//    func doSomeWork() {
-//
-//    }
-//
-//    func doSomeOtherWork() {
-//
-//    }
+    
 }

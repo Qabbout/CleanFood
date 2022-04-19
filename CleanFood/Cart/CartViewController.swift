@@ -14,25 +14,11 @@ import UIKit
 
 class CartViewController: UICollectionViewController, CartDisplayConfiguration {
 
+    var currentItemIndex: Int = 0
 
 
-//    var categoryIndex: String = "1" {
-//        didSet {
-//            interactorRequestItemsOfCategory(categoryIndexString: categoryIndex)
-//        }
-//    }
     var interactor: CartInteractorConfiguration?
     var router: (NSObjectProtocol & CartRoutingConfiguration & CartDataPassing)?
-
-//    var categories: Categories? {
-//        didSet {
-//            DispatchQueue.main.async { [weak self] in
-//                self?.collectionView.reloadData()
-//            }
-//
-//        }
-//    }
-
 
     var items: Items? {
         didSet {
@@ -44,40 +30,38 @@ class CartViewController: UICollectionViewController, CartDisplayConfiguration {
 
     }
 
-//    private let floatingActionButton: UIButton = {
-//        let button = UIButton()
-//        button.layer.masksToBounds = false
-//        button.layer.cornerRadius = 30
-//        button.backgroundColor = .white
-//        button.setImage(UIImage(systemName: "cart.fill"), for: .normal)
-//        button.tintColor = .black
-//        button.layer.shadowRadius = 5
-//        button.layer.shadowOpacity = 0.2
-//        button.layer.shadowOffset = .zero
-//        button.layer.shadowColor = UIColor.black.cgColor
-//        button.layer.shouldRasterize = true
-//        button.layer.rasterizationScale = UIScreen.main.scale
-//        return button
-//    }()
+    private let floatingActionButton: UIButton = {
+        let button = UIButton()
+        button.layer.masksToBounds = false
+        button.layer.cornerRadius = 30
+        button.backgroundColor = .white
+        button.setImage(UIImage(systemName: "creditcard.fill"), for: .normal)
+        button.tintColor = .black
+        button.layer.shadowRadius = 5
+        button.layer.shadowOpacity = 0.2
+        button.layer.shadowOffset = .zero
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shouldRasterize = true
+        button.layer.rasterizationScale = UIScreen.main.scale
+        return button
+    }()
 
-//
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        floatingActionButton.frame = .init(x: view.frame.width - 60 - 20, y: view.frame.height - 100, width: 60, height: 60)
-//    }
+
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        floatingActionButton.frame = .init(x: view.frame.width - 60 - 20, y: view.frame.height - 100, width: 60, height: 60)
+    }
 
 
     // MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.items = router?.dataStore?.items
+        addFAB()
 
-//        addFAB()
-//        interactorRequestCategories()
-//        interactorRequestItemsOfCategory()
-
-//        NotificationCenter.default.addObserver(self, selector: #selector(interactorGetNewItems(_:)), name: NSNotification.Name("newCategory"), object: nil)
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +69,7 @@ class CartViewController: UICollectionViewController, CartDisplayConfiguration {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.backItem?.title = "Menu"
         navigationController?.navigationBar.tintColor = .black
+        collectionView.contentInsetAdjustmentBehavior = .automatic
 
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -92,23 +77,10 @@ class CartViewController: UICollectionViewController, CartDisplayConfiguration {
         navigationController?.navigationBar.isHidden = true
     }
 
-//    deinit {
-//        NotificationCenter.default
-//            .removeObserver(self,
-//                            name: NSNotification.Name("newCategory"),
-//                            object: nil) }
-//
-//    @objc private func interactorGetNewItems(_ notification: Notification) {
-//        self.categoryIndex = notification.object as! String
-//
-//
-//    }
+    private func addFAB() {
+        view.addSubview(floatingActionButton)
 
-//    private func addFAB() {
-//        view.addSubview(floatingActionButton)
-//            //        floatingActionButton.addTarget(self, action: #selector(printit), for: .touchUpInside)
-//
-//    }
+    }
 
 //
 //    func interactorRequestCategories() {
@@ -140,29 +112,17 @@ class CartViewController: UICollectionViewController, CartDisplayConfiguration {
 extension CartViewController: UICollectionViewDelegateFlowLayout {
 
 
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        switch indexPath.section {
-//            case 0:
-//                return CGSize(width: view.bounds.width, height: view.bounds.height / 1.5)
-//            case 1:
-//                return CGSize(width: view.bounds.width, height: view.bounds.height)
-//            default:
-//                return CGSize(width: view.bounds.width, height: view.bounds.height)
-//        }
-//    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         1
     }
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
+        3
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "carts", for: indexPath) as! CartsCollectionViewCell
+        cell.items = self.items
         return cell
 //        switch indexPath.section {
 //            case 0:
@@ -181,6 +141,28 @@ extension CartViewController: UICollectionViewDelegateFlowLayout {
 //        }
 
     }
+
+    func getIndexAndNotify() {
+        guard let cell = collectionView.visibleCells.first else { return }
+        let indexPath = collectionView.indexPath(for: cell)
+        if indexPath?.section != currentItemIndex {
+            currentItemIndex = indexPath?.section ?? currentItemIndex
+            NotificationCenter.default
+                .post(name: NSNotification.Name("sections"),
+                      object: indexPath?.section) }
+    }
+
+
+
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        getIndexAndNotify()
+    }
+
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        getIndexAndNotify()
+    }
+
+
 
 
 

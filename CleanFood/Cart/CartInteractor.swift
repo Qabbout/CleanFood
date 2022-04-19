@@ -23,20 +23,5 @@ class CartInteractor: CartInteractorConfiguration, CartDataStore {
 
         // MARK: Do something (and send response to HomePresenter)
 
-//    func workerGetCategories(request: Home.RequestCategories) {
-//
-//
-//        worker.getCategories(completion: { [weak self] response in
-//            self?.presenter?.presentCategories(response: response)
-//        })
-//
-//    }
-//    func workerGetItemsOfACategory(request: Home.RequestItemsOfACategory) {
-//
-//        worker.getItemsOfACategory(request: request) { [weak self] response in
-//            self?.presenter?.presentItemsOfACategory(response: response)
-//
-//        }
-//    }
 
 }

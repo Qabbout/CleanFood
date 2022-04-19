@@ -14,18 +14,9 @@ import UIKit
 
 class CartPresenter: CartPresenterConfiguration {
     weak var viewController: CartDisplayConfiguration?
-
-//    func presentCategories(response: Home.ResponseCategories) {
-//        guard let categories = response.categories else { return }
-//        let viewModel = Home.ViewModelCategories(categories: categories)
-//        viewController?.displayCategories(viewModel: viewModel)
-//    }
-//
-//    func presentItemsOfACategory(response: Home.ResponseItemsOfACategory) {
-//        guard let items = response.items else { return }
-//        let viewModel = Home.ViewModelItemsOfACategory(items: items)
-//        viewController?.displayItemsOfACategory(viewModel: viewModel)
-//    }
-
+    
 
 }
+
+
+
