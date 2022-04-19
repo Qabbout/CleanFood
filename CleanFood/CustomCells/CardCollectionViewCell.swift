@@ -14,7 +14,11 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
 
+    @IBAction func addButtonPressed(_ sender: UIButton){
+
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
 

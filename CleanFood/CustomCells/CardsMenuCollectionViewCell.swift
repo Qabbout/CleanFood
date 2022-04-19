@@ -51,6 +51,7 @@ extension CardsMenuCollectionViewCell: UICollectionViewDelegate, UICollectionVie
             cell.ingredientsLabel.text = items[indexPath.item].ingredients
             cell.image.sd_setImage(with: URL(string:
                 items[indexPath.item].image))
+            cell.addButton.setTitle(items[indexPath.item].price, for: .normal)
 
         }
 

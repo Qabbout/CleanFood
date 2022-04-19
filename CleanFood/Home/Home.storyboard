@@ -336,6 +336,9 @@
                                                                                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                                             <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                                         </buttonConfiguration>
+                                                                                                                        <connections>
+                                                                                                                            <action selector="addButtonPressed:" destination="u58-nJ-xi5" eventType="touchUpInside" id="xSI-kt-JeR"/>
+                                                                                                                        </connections>
                                                                                                                     </button>
                                                                                                                 </subviews>
                                                                                                             </stackView>
@@ -364,6 +367,7 @@
                                                                                             </collectionViewCellContentView>
                                                                                             <size key="customSize" width="383" height="400"/>
                                                                                             <connections>
+                                                                                                <outlet property="addButton" destination="I0e-4I-qD2" id="MXX-1v-sh3"/>
                                                                                                 <outlet property="background" destination="YPn-95-pBU" id="07d-2k-De4"/>
                                                                                                 <outlet property="descriptionLabel" destination="f6F-5n-nSl" id="5EN-Nn-cFL"/>
                                                                                                 <outlet property="image" destination="QxT-Hx-Ey6" id="ha9-ix-Ygn"/>
