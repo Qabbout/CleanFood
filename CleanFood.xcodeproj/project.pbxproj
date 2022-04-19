@@ -23,6 +23,13 @@
 		F7C732D3280E99CE00845122 /* CartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C732CD280E99CE00845122 /* CartInteractor.swift */; };
 		F7C732D5280E9BFB00845122 /* CartConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C732D4280E9BFB00845122 /* CartConfigurator.swift */; };
 		F7C732D7280E9F5F00845122 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C732D6280E9F5F00845122 /* Cart.storyboard */; };
+		F7C732DA280EC0ED00845122 /* SectionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C732D9280EC0ED00845122 /* SectionsCollectionViewCell.swift */; };
+		F7C732DC280EC0F700845122 /* SectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C732DB280EC0F700845122 /* SectionCollectionViewCell.swift */; };
+		F7C732DE280EC33200845122 /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C732DD280EC33200845122 /* ItemsCollectionViewCell.swift */; };
+		F7C732E0280EC34C00845122 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C732DF280EC34C00845122 /* ItemCollectionViewCell.swift */; };
+		F7C732E2280EC38600845122 /* TotalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C732E1280EC38600845122 /* TotalCollectionViewCell.swift */; };
+		F7C732E4280EC74100845122 /* CartsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C732E3280EC74100845122 /* CartsCollectionViewCell.swift */; };
+		F7C732E6280EC74A00845122 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C732E5280EC74A00845122 /* CartCollectionViewCell.swift */; };
 		F7DBCDB6280403E50081B21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBCDB5280403E50081B21A /* AppDelegate.swift */; };
 		F7DBCDB8280403E50081B21A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DBCDB7280403E50081B21A /* SceneDelegate.swift */; };
 		F7DBCDBD280403E50081B21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7DBCDBB280403E50081B21A /* Main.storyboard */; };
@@ -62,6 +69,13 @@
 		F7C732CD280E99CE00845122 /* CartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartInteractor.swift; sourceTree = "<group>"; };
 		F7C732D4280E9BFB00845122 /* CartConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartConfigurator.swift; sourceTree = "<group>"; };
 		F7C732D6280E9F5F00845122 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		F7C732D9280EC0ED00845122 /* SectionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7C732DB280EC0F700845122 /* SectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7C732DD280EC33200845122 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7C732DF280EC34C00845122 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7C732E1280EC38600845122 /* TotalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7C732E3280EC74100845122 /* CartsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7C732E5280EC74A00845122 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7DBCDB2280403E50081B21A /* CleanFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DBCDB5280403E50081B21A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7DBCDB7280403E50081B21A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +147,7 @@
 		F7C732C7280E994B00845122 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				F7C732D8280EC0B500845122 /* Custom Cells */,
 				F7C732C8280E99CE00845122 /* CartPresenter.swift */,
 				F7C732C9280E99CE00845122 /* CartWorker.swift */,
 				F7C732CA280E99CE00845122 /* CartRouter.swift */,
@@ -143,6 +158,20 @@
 				F7C732D6280E9F5F00845122 /* Cart.storyboard */,
 			);
 			path = Cart;
+			sourceTree = "<group>";
+		};
+		F7C732D8280EC0B500845122 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F7C732D9280EC0ED00845122 /* SectionsCollectionViewCell.swift */,
+				F7C732DB280EC0F700845122 /* SectionCollectionViewCell.swift */,
+				F7C732DD280EC33200845122 /* ItemsCollectionViewCell.swift */,
+				F7C732DF280EC34C00845122 /* ItemCollectionViewCell.swift */,
+				F7C732E1280EC38600845122 /* TotalCollectionViewCell.swift */,
+				F7C732E3280EC74100845122 /* CartsCollectionViewCell.swift */,
+				F7C732E5280EC74A00845122 /* CartCollectionViewCell.swift */,
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 		F7DBCDA9280403E50081B21A = {
@@ -168,7 +197,6 @@
 			children = (
 				F76C521B2806FF44009294C2 /* Models */,
 				F76C52182806F6A0009294C2 /* Services */,
-				F7DBCDD8280414B20081B21A /* CustomCells */,
 				F7DBCDB5280403E50081B21A /* AppDelegate.swift */,
 				F7DBCDB7280403E50081B21A /* SceneDelegate.swift */,
 				F7DBCDBB280403E50081B21A /* Main.storyboard */,
@@ -184,6 +212,7 @@
 		F7DBCDD5280405360081B21A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F7DBCDD8280414B20081B21A /* CustomCells */,
 				F7DBCDCD2804052D0081B21A /* HomeViewController.swift */,
 				F7DBCDCE2804052D0081B21A /* HomeInteractor.swift */,
 				F7DBCDC92804052D0081B21A /* HomePresenter.swift */,
@@ -329,21 +358,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C732E2280EC38600845122 /* TotalCollectionViewCell.swift in Sources */,
 				F76C521F2807002D009294C2 /* Item.swift in Sources */,
 				F7DBCDD12804052D0081B21A /* HomeRouter.swift in Sources */,
 				F7C732D5280E9BFB00845122 /* CartConfigurator.swift in Sources */,
 				F7DBCDB6280403E50081B21A /* AppDelegate.swift in Sources */,
+				F7C732DA280EC0ED00845122 /* SectionsCollectionViewCell.swift in Sources */,
 				F7DBCDD32804052D0081B21A /* HomeViewController.swift in Sources */,
 				F7DBCDB8280403E50081B21A /* SceneDelegate.swift in Sources */,
+				F7C732E6280EC74A00845122 /* CartCollectionViewCell.swift in Sources */,
 				F7DBCDDA280414D20081B21A /* CarouselCollectionViewCell.swift in Sources */,
 				F7C732D2280E99CE00845122 /* CartViewController.swift in Sources */,
 				F7DBCDD02804052D0081B21A /* HomeWorker.swift in Sources */,
 				F7E386EF28057706001BC542 /* CategoryCollectionViewCell.swift in Sources */,
 				F7C732CE280E99CE00845122 /* CartPresenter.swift in Sources */,
 				F7E386ED280575FC001BC542 /* CategoriesCollectionViewCell.swift in Sources */,
+				F7C732E0280EC34C00845122 /* ItemCollectionViewCell.swift in Sources */,
 				F766C7672806B0DF007D0865 /* CardCollectionViewCell.swift in Sources */,
+				F7C732E4280EC74100845122 /* CartsCollectionViewCell.swift in Sources */,
 				F76C521D2806FF51009294C2 /* Category.swift in Sources */,
 				F7C732CF280E99CE00845122 /* CartWorker.swift in Sources */,
+				F7C732DC280EC0F700845122 /* SectionCollectionViewCell.swift in Sources */,
 				F7E386F128058CE9001BC542 /* FiltersCollectionViewCell.swift in Sources */,
 				F7C732D0280E99CE00845122 /* CartRouter.swift in Sources */,
 				F7DBCDD42804052D0081B21A /* HomeInteractor.swift in Sources */,
@@ -355,6 +390,7 @@
 				F7DBCDDC280416490081B21A /* CarouselMainCollectionViewCell.swift in Sources */,
 				F76C5221280708BF009294C2 /* HomeConfigurator.swift in Sources */,
 				F76C521A2806F85E009294C2 /* APIService.swift in Sources */,
+				F7C732DE280EC33200845122 /* ItemsCollectionViewCell.swift in Sources */,
 				F766C7692806B13E007D0865 /* CardsMenuCollectionViewCell.swift in Sources */,
 				F7C732D3280E99CE00845122 /* CartInteractor.swift in Sources */,
 			);

@@ -61,6 +61,8 @@ class HomeViewController: UICollectionViewController, HomeDisplayConfiguration {
     }()
 
 
+
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         floatingActionButton.frame = .init(x: view.frame.width - 60 - 20, y: view.frame.height - 100, width: 60, height: 60)

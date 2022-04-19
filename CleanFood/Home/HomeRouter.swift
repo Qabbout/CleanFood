@@ -23,11 +23,11 @@ class HomeRouter: NSObject, HomeRoutingConfiguration, HomeDataPassing {
 //
     func routeToCart() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var destinationVC = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
         CartConfigurator.shared.configure(viewController: destinationVC)
 
-//        var destinationDS = destinationVC.router!.dataStore!
-        passDataToCart(source: dataStore!, destination: &destinationVC)
+        var destinationDS = destinationVC.router!.dataStore!
+        passDataToCart(source: dataStore!, destination: &destinationDS)
         navigateToCart(source: viewController!, destination: destinationVC)
 
     }
@@ -40,7 +40,7 @@ class HomeRouter: NSObject, HomeRoutingConfiguration, HomeDataPassing {
 
 // MARK: Passing data to other screen
 
-    func passDataToCart(source: HomeDataStore, destination: inout CartViewController) {
+    func passDataToCart(source: HomeDataStore, destination: inout CartDataStore) {
         destination.items = source.items
     }
 }

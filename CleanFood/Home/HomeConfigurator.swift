@@ -47,7 +47,7 @@ protocol HomeDataPassing {
 
 // Data Store of Route
 protocol HomeDataStore {
-    var items: Items? { get set}
+    var items: Items? { get set }
 }
 
 
