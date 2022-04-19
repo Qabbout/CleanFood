@@ -11,7 +11,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
     var currentIndex: Int = 0 {
         didSet {
             NotificationCenter.default.post(name: NSNotification.Name("newCategory"), object: String(currentIndex + 1))
-            print("CURRENTINDEX: \(currentIndex)")
+//            print("CURRENTINDEX: \(currentIndex)")
 //            self.collectionView.reloadData()
         }
     }
