@@ -31,7 +31,8 @@ protocol HomeDisplayConfiguration: AnyObject {
 
 // Interactor -> Worker
 protocol HomeWorkerConfiguration {
-    func doSomeWork()
+    func getCategories(completion: @escaping (Home.ResponseCategories) -> Void)
+    func getItemsOfACategory(request: Home.RequestItemsOfACategory, completion: @escaping (Home.ResponseItemsOfACategory) -> Void)
 }
 
 

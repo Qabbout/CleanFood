@@ -12,7 +12,7 @@
 
 import UIKit
 
-class HomeWorker {
+class HomeWorker: HomeWorkerConfiguration {
 
     func getCategories(completion: @escaping (Home.ResponseCategories) -> Void) {
         APIService.shared.getCategories { categories in

@@ -12,11 +12,11 @@
 
 import UIKit
 
-class CartWorker {
+class CartWorker: CartWorkerConfiguration {
 //    func doSomeWork() {
-//        
+//
 //    }
-//    
+//
 //    func doSomeOtherWork() {
 //
 //    }
