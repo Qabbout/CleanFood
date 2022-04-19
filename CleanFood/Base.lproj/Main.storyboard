@@ -34,5 +34,13 @@
             </objects>
             <point key="canvasLocation" x="627" y="94"/>
         </scene>
+        <!--Cart-->
+        <scene sceneID="NRx-n2-INj">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CartViewController" storyboardName="Cart" id="Zqi-wt-dSa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajC-tO-kTw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="94"/>
+        </scene>
     </scenes>
 </document>

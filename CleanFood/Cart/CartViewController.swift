@@ -14,6 +14,8 @@ import UIKit
 
 class CartViewController: UICollectionViewController, CartDisplayConfiguration {
 
+
+
 //    var categoryIndex: String = "1" {
 //        didSet {
 //            interactorRequestItemsOfCategory(categoryIndexString: categoryIndex)
@@ -32,14 +34,15 @@ class CartViewController: UICollectionViewController, CartDisplayConfiguration {
 //    }
 
 
-//    var items: Items? {
-//        didSet {
-//            DispatchQueue.main.async { [weak self] in
-//                self?.collectionView.reloadData()
-//            }
-//
-//        }
-//    }
+    var items: Items? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
+
+            }
+        }
+
+    }
 
 //    private let floatingActionButton: UIButton = {
 //        let button = UIButton()
@@ -64,20 +67,29 @@ class CartViewController: UICollectionViewController, CartDisplayConfiguration {
 //    }
 
 
-        // MARK: - View lifecycle
+    // MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.items = router?.dataStore?.items
+
 //        addFAB()
-
-        collectionView.contentInsetAdjustmentBehavior = .never
-
-        CartConfigurator.shared.configure(viewController: self)
 //        interactorRequestCategories()
 //        interactorRequestItemsOfCategory()
 
 //        NotificationCenter.default.addObserver(self, selector: #selector(interactorGetNewItems(_:)), name: NSNotification.Name("newCategory"), object: nil)
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.backItem?.title = "Menu"
+        navigationController?.navigationBar.tintColor = .black
+
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
 
 //    deinit {
@@ -109,7 +121,7 @@ class CartViewController: UICollectionViewController, CartDisplayConfiguration {
 //        interactor?.workerGetItemsOfACategory(request: request)
 //    }
 
-        // MARK: - display view model from HomePresenter
+    // MARK: - display view model from HomePresenter
 
 //    func displayCategories(viewModel: Home.ViewModelCategories) {
 //        self.categories = viewModel.categories
@@ -123,7 +135,7 @@ class CartViewController: UICollectionViewController, CartDisplayConfiguration {
 }
 
 
-    // MARK: CollectionView Medthods
+// MARK: CollectionView Medthods
 
 extension CartViewController: UICollectionViewDelegateFlowLayout {
 
@@ -145,11 +157,13 @@ extension CartViewController: UICollectionViewDelegateFlowLayout {
         1
     }
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        1
     }
 
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        return cell
 //        switch indexPath.section {
 //            case 0:
 //                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCarousel", for: indexPath) as! CarouselMainCollectionViewCell
@@ -165,8 +179,8 @@ extension CartViewController: UICollectionViewDelegateFlowLayout {
 //            default:
 //                return UICollectionViewCell.init()
 //        }
-//
-//    }
+
+    }
 
 
 

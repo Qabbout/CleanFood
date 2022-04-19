@@ -47,7 +47,7 @@ protocol CartDataPassing {
 
     // Data Store of Route
 protocol CartDataStore {
-//    var items: Items? { get }
+    var items: Items? { get }
 }
 
 

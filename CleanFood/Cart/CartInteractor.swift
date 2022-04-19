@@ -15,7 +15,7 @@ import UIKit
 
 
 class CartInteractor: CartInteractorConfiguration, CartDataStore {
-
+    var items: Items?
 
     var presenter: CartPresenterConfiguration?
     let worker: CartWorker = CartWorker()

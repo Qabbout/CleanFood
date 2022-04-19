@@ -32,13 +32,14 @@ class HomeViewController: UICollectionViewController, HomeDisplayConfiguration {
 
         }
     }
-    
+
 
     var items: Items? {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.collectionView.reloadData()
             }
+            router?.dataStore?.items = self.items
 
         }
     }
@@ -96,8 +97,15 @@ class HomeViewController: UICollectionViewController, HomeDisplayConfiguration {
 
     private func addFAB() {
         view.addSubview(floatingActionButton)
-//        floatingActionButton.addTarget(self, action: #selector(printit), for: .touchUpInside)
+        floatingActionButton.addTarget(self, action: #selector(goToCartScreen), for: .touchUpInside)
 
+    }
+
+    @objc private func goToCartScreen() {
+        guard let _ = items else {
+            return
+        }
+        router?.routeToCart()
     }
 
 
@@ -160,8 +168,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCollectionViewCell
-                cell.categories = self.categories
-                cell.items = self.items
+            cell.categories = self.categories
+            cell.items = self.items
             return cell
 
         default:

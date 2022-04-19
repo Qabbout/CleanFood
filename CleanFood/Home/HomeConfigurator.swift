@@ -38,16 +38,16 @@ protocol HomeWorkerConfiguration {
 
 // View Controller -> Route
 protocol HomeRoutingConfiguration {
-//    func routeToCart()
+    func routeToCart()
 }
 
 protocol HomeDataPassing {
-    var dataStore: HomeDataStore? { get }
+    var dataStore: HomeDataStore? { get set}
 }
 
 // Data Store of Route
 protocol HomeDataStore {
-    var items: Items? { get }
+    var items: Items? { get set}
 }
 
 

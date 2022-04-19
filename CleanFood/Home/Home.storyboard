@@ -426,7 +426,6 @@
                             <outlet property="delegate" destination="ikZ-5M-R5t" id="QuQ-9Y-g4y"/>
                         </connections>
                     </collectionView>
-                    <nil key="simulatedTopBarMetrics"/>
                     <size key="freeformSize" width="414" height="1000"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NyA-Vd-U1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

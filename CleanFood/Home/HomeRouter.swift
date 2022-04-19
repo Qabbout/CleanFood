@@ -21,26 +21,26 @@ class HomeRouter: NSObject, HomeRoutingConfiguration, HomeDataPassing {
 
 // MARK: Routing (navigating to other screens)
 //
-//func routeToCart() {
-//
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let destinationVC = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+    func routeToCart() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var destinationVC = storyboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        CartConfigurator.shared.configure(viewController: destinationVC)
+
 //        var destinationDS = destinationVC.router!.dataStore!
-//        passDataToCart(source: dataStore!, destination: &destinationDS)
-//        navigateToCart(source: viewController!, destination: destinationVC)
-//
-// }
-//
-//// MARK: Navigation to other screen
-//
-//func navigateToCart(source: HomeViewController, destination: CartViewController) {
-//    source.navigationController?.pushViewController(destination, animated: true)
-//
-//}
-//
-//// MARK: Passing data to other screen
-//
-//    func passDataToCart(source: HomeDataStore, destination: inout CartViewController) {
-//        destination.items = source.items
-//    }
+        passDataToCart(source: dataStore!, destination: &destinationVC)
+        navigateToCart(source: viewController!, destination: destinationVC)
+
+    }
+
+// MARK: Navigation to other screen
+
+    func navigateToCart(source: HomeViewController, destination: CartViewController) {
+        source.navigationController?.pushViewController(destination, animated: true)
+    }
+
+// MARK: Passing data to other screen
+
+    func passDataToCart(source: HomeDataStore, destination: inout CartViewController) {
+        destination.items = source.items
+    }
 }
