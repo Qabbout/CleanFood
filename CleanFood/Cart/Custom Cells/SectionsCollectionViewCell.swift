@@ -13,7 +13,7 @@ class SectionsCollectionViewCell: UICollectionViewCell {
 
 
         didSet {
-            print("index: \(currentItemIndex)")
+//            print("index: \(currentItemIndex)")
 
             DispatchQueue.main.async { [weak self] in
 
